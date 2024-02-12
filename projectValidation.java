@@ -1,12 +1,11 @@
-package testinn.com;
-
+package testin.com;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class ResgisterationValidation {	
+public class RegisterationValidation {	
 	public static boolean Login(FirefoxDriver driver)
 	{
 		WebElement uemail = driver.findElement(By.id("email"));
@@ -23,9 +22,9 @@ public class ResgisterationValidation {
 		    Thread.currentThread().interrupt();
 		}
 		
-		WebElement isLogged = driver.findElement(By.id("OnDashboard"));
+		WebElement isLogged = driver.findElement(By.xpath("//div[@class='p-4 text-2xl font-semibold text-left']"));
 		try {
-			if(isLogged.getText().equals("OnDashboard"))
+			if(isLogged.getText().contains("Dashboard!"))
 				System.out.println("Login SuccessFull");
 			else {				
 				System.out.println("Login Failed");
@@ -82,7 +81,7 @@ public class ResgisterationValidation {
 
 	public static void main(String[] args) {
 		FirefoxDriver driver = new FirefoxDriver();
-		driver.get("http://localhost:5173/signup");
+		driver.get("http://localhost:5173/");
 		boolean isRegistered = Register(driver);
 		if(!isRegistered) return;
 		boolean isLogged = Login(driver);
