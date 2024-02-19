@@ -1,4 +1,4 @@
-package testin.com;
+package testinn.com;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,10 +11,10 @@ import org.testng.annotations.Test;
 
 public class Register {
 	@Test(dataProvider = "RegisterationData")
-	public void Registeration(String f_name, String l_name, String _email, String _pass, String _cpass) {
+	public void Registeration(String f_name, String l_name, String e_email, String p_pass, String p_cpass) {
 
 		FirefoxDriver driver = new FirefoxDriver();
-		driver.get("http://localhost:5173/");
+		driver.get("http://localhost:5173/signup");
 
 		WebElement fname = driver.findElement(By.id("fname"));
 		fname.clear();
@@ -24,27 +24,22 @@ public class Register {
 		lname.sendKeys(l_name);
 		WebElement uemail = driver.findElement(By.id("email"));
 		uemail.clear();
-		uemail.sendKeys(_email);
+		uemail.sendKeys(e_email);
 		WebElement upass = driver.findElement(By.id("password"));
 		upass.clear();
-		upass.sendKeys(_pass);
+		upass.sendKeys(p_pass);
 		WebElement upass1 = driver.findElement(By.id("cpassword"));
 		upass1.clear();
-		upass1.sendKeys(_cpass);
+		upass1.sendKeys(p_cpass);
 		driver.findElement(By.xpath("//button[normalize-space()='Sign Up']")).click();
 
-		try {
-			TimeUnit.SECONDS.sleep(10);
-		} catch (InterruptedException ie) {
-			Thread.currentThread().interrupt();
-		}
 		Assert.assertTrue(driver.findElement(By.linkText("Sign in")).isDisplayed());
 
 	}
 
 	@DataProvider
 	public Object[][] RegisterationData() {
-		Object[][] data = new Object[1][5];
+		Object[][] data = new Object[5][5];
 
 		data[0][0] = "Mayank";
 		data[0][1] = "Aggarwal";
