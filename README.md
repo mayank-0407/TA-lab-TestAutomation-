@@ -30,4 +30,4 @@
 - now extract and add path to system variables -> path -> new
 - type ant in cmd to check it will prompt build fail ( bcz there is not build.xml )
 - Download xslt file from link : https://drive.google.com/drive/folders/1nic2hXP6JYSEMJ-JXS4JBk4MU3VfUiX1  and extract it and paste it in exclipse project
-- now run build.xml using ant tool by selecting 2nd tool (option)
+- now run build.xml using ant tool by selecting 2nd tool (option) and tick generate report option ( if error comes run testng.xml file )
