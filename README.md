@@ -19,7 +19,15 @@
 - right click on src/test/java select package and create it
 - than right click on that package and select other than select test.ng package.
 
-# for creating testNG.xml
+# for creating testNG.xml (index and emailable reports )
 - right on project -> at end go to testNG -> convert to testNG
  ---> in testNG.xml if you want to run only som specific methods than add <methods><include name="login"/></methods>
 - then you can check emailable report and index report
+
+# for xslt Reports
+- Install Java
+- downlad ant 1.10 from this link https://ant.apache.org/bindownload.cgi
+- now extract and add path to system variables -> path -> new
+- type ant in cmd to check it will prompt build fail ( bcz there is not build.xml )
+- Download xslt file from link : https://drive.google.com/drive/folders/1nic2hXP6JYSEMJ-JXS4JBk4MU3VfUiX1  and extract it and paste it in exclipse project
+- now run build.xml using ant tool by selecting 2nd tool (option)
