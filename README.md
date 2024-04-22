@@ -22,3 +22,4 @@
 # for creating testNG.xml
 - right on project -> at end go to testNG -> convert to testNG
  ---> in testNG.xml if you want to run only som specific methods than add <methods><include name="login"/></methods>
+- then you can check emailable report and index report
